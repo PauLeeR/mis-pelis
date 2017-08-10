@@ -1,0 +1,147 @@
+#movies{
+	background-color: $color_background_principal;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;		
+}
+
+.principal{
+	text-align: center;
+	margin-top: 30%;
+	display: block;	
+	h1{
+		font-family: $font_family_a;
+		color: $color_a;
+		font-size: 60px;
+		margin-bottom: 15%;
+	}
+	.btn{
+		background-color: $color_a;
+		width: 90%;
+		height: 6vh;
+		margin-top: 20px;		
+		p{
+			color: $color_background_principal;
+			font-family: $font_family_b;
+			margin-top: 2px;
+			font-weight: bold;
+		}
+	}	
+	a{
+		color: $color_a;
+		text-decoration:none;		
+	}
+	h5{
+		font-family: $font_family_b;
+		margin-top: 10%;
+		cursor: pointer;			
+		font-weight: bold;
+	}
+	h5:hover{
+		color: $color_background_principal;
+		background-color: white;
+		opacity: 0.8;
+		padding: 4px;
+	}
+}
+
+/*Index 2*/
+
+#cuenta{
+	background-color: $color_background_principal2;
+}
+
+.cuenta{
+	margin-left: 7%;
+	margin-top: 35%;
+	height: auto;
+	font-family: $font_family_b;
+	font-weight: bold;
+	p{
+		text-align: left;
+		color: $color_background_principal;
+	}
+	input{
+		width: 83%;
+		margin-bottom: 7px;
+		padding: 8px;
+		border-radius: 5px;
+		border-style: none;
+	}
+	a{
+		text-decoration:none;	
+		span.btn-2{
+			top:10%;
+			padding: 10px 70px;
+			margin-left: 10%;
+			background-color: $color_d;
+			color: $color_a;
+			border-radius: 5px;			
+		}		
+	}
+	.errores{
+   		background: red;
+   		color: white;
+   		display: none;
+   		font-size: 14px;
+   		margin-top: 10px;
+   		margin-left: 50px;
+   		padding: 5px;
+   		position: absolute;
+	}	
+}
+
+/*Index 3*/
+
+#login{
+	background-color: $color_background_principal;
+}
+
+.login{
+	text-align: center;
+	margin-top: 30%;
+	display: block;
+	h1{
+		font-family: $font_family_a;
+		color: $color_a;
+		font-size: 60px;
+		margin-bottom: 15%;
+	}
+	.log{
+		margin-left: 15%;
+		p{
+			float:left;
+			display: block;
+			color: $color_a;
+			font-weight: bold;
+		}
+		input{
+			display: block;
+			width: 83%;
+			margin-bottom: 7px;
+			padding: 8px;
+			border-radius: 5px;
+			border-style: none;
+		}
+		.errores{
+   			background: red;
+   			color: white;
+   			display: none;
+   			font-size: 14px;
+   			margin-top: 10px;
+   			margin-left: 50px;
+   			padding: 5px;
+   			position: absolute;
+		}
+		.btn{
+			margin-top: 30px;
+			padding: 10px 70px;
+			margin-left: -15%;
+			background-color: $color_b;
+			border: 2px solid $color_a;
+			color: $color_a;
+			border-radius: 5px;	
+			font-weight: bold;
+		}
+	}
+}
