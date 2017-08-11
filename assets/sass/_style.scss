@@ -36,8 +36,8 @@
   }
 }
 #espacio-categorias {
-  margin: 85px 30px 10px 30px;
-  padding: 5px 10px;
+  margin: 85px 10px 10px 10px;
+  padding: 5px 5px;
   width: 300px;
   position: relative;
   -webkit-perspective: 800px;
@@ -283,10 +283,10 @@
 }
 
 /****select movie categories****/
-/*.movie-pic{
+.movie-pic{
   width: 100%;
   height: 50%;
-  padding-top: 320px;
+  //padding-top: 320px;
   background-color: gray; 
 }
 .movie-watch{
@@ -306,7 +306,7 @@
     font-weight: $bold;
     margin-left: 20px;
   }
-}*/
+}
 
 #profile{
   padding-top: 100px;
@@ -359,7 +359,7 @@
     display: inline-block;
   }
 
-  .movie-watch{
+  .movie-watch2{
     margin: 0;
     padding: 0;
   }
@@ -369,7 +369,7 @@
     background: cover;
   }
 
-  .movie-pic{
+  .movie-pic2{
     width: 100%;
     height: 50%;
   }

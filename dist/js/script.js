@@ -12648,9 +12648,9 @@ $(document).ready(function() {
 			//pluggin que hace los rating de las estrellas
 			//$(".rateYo").rateYo({rating: e.rating, starWidth: "25px", ratedFill: "#E74C3C"});
 
-		$("#espacio-peliculas").append('<div class="contenedor-cada-pelicula row" id="'+e.show_id+'">'+
+		$("#espacio-peliculas").append('<div class="contenedor-cada-pelicula row">'+
                     '<div class="col-xs-12">'+
-                        '<h3>'+traerPeliculas+'</h3><a class="btn-favorito pull-right" href="#">Add Favorite</a>'+ 
+                        '<h3 id="'+e.show_id+'">'+traerPeliculas+'</h3><a class="btn-favorito pull-right" href="#">Add Favorite</a>'+ 
                         '<div class="col-xs-2 bg-imagen">'+imagenPelicula+'</div>'+ 
                         '<div class="col-xs-10 col10">'+
                             '<div class="col-xs-6">'+
@@ -12670,12 +12670,12 @@ $(document).ready(function() {
                 '<div class="nav-negro"><i class="fa fa-chevron-left cerrar" aria-hidden="true"></i><h3>DETAILS<h3></div>'+
                 '<div id="details">'+
                 '<div class="row">'+
-                '<div class="col-xs-12 movie-pic text-center">'+
+                '<div class="col-xs-12 movie-pic2 text-center">'+
                 '<img src="'+e.poster+'" alt="">'+
                 '</div> '+
                 '</div>'+
                 '<div class="col-xs-12 movie-watch">'+
-                '<h5 class="watch-barra">Watch <i class="fa fa-angle-right" aria-hidden="true"></i></h5>'+
+                '<h5 class="watch-barra2">Watch <i class="fa fa-angle-right" aria-hidden="true"></i></h5>'+
                 '</div>'+
                 '</div>'+
                 '<div class="contenido-pelis">'+
@@ -12705,49 +12705,6 @@ $(document).ready(function() {
     		$("#espacio-categorias").append("<option value='" + i + "'>" + uniqueNames[i] + "</option>");
     	}
 		
-
-    	//Botones echos a la mala u . u (perdon)
-
-		$(".60031219").click(function(){
-    		$(".fav-60031219").addClass('mostrar');
-    	})
-    	$(".425231").click(function(){
-    		$(".fav-425231").addClass('mostrar');
-    	})
-    	$(".60025007").click(function(){
-    		$(".fav-60025007").addClass('mostrar')
-    	})
-    	$(".20159719").click(function(){
-    		$(".fav-20159719").addClass('mostrar')
-    	})  	
-    	$(".492899").click(function(){
-    		$(".fav-492899").addClass('mostrar')
-    	})
-    	$(".70039386").click(function(){
-    		$(".fav-70039386").addClass('mostrar')
-    	})
-    	$(".70242546").click(function(){
-    		$(".fav-70242546").addClass('mostrar')
-    	})
-    	$(".70206627").click(function(){
-    		$(".fav-70206627").addClass('mostrar')
-    	})
-		$(".60034580").click(function(){
-    		$(".fav-60034580").addClass('mostrar')
-    	})
-    	$(".60031289").click(function(){
-    		$(".fav-60031289").addClass('mostrar')
-    	})
-    	$(".70021646").click(function(){
-    		$(".fav-70021646").addClass('mostrar')
-    	})
-    	$(".287348").click(function(){
-    		$(".fav-287348").addClass('mostrar')
-    	})
-    	$(".70043941").click(function(){
-    		$(".fav-70043941").addClass('mostrar')
-    	})
-
 	}
 	function llamadaAjax(){
 		$.ajax({
@@ -12787,7 +12744,7 @@ $(document).ready(function() {
             $("#mensaje").fadeOut();
             localStorage.setItem('nombre', nombre);
             var nombrePerf = localStorage.getItem('nombre'); 
-			$("#nameProfile").html(nombrePerf);
+			//$("#nameProfile").html(nombrePerf);
         }
 
         if(nick == ""){
@@ -12797,7 +12754,7 @@ $(document).ready(function() {
             $("#mensaje2").fadeOut();
             localStorage.setItem('username', nick);
             var usuarioPerf = localStorage.getItem('username'); 
-			$("#usernameProfile").html(usuarioPerf);
+			//$("#usernameProfile").html(usuarioPerf);
 	     }
 
         if(email == "" || !correo.test(email)){
@@ -12815,7 +12772,7 @@ $(document).ready(function() {
             $("#mensaje4").fadeOut();
             localStorage.setItem('ciudad', ciudad);
             var countryPerf = localStorage.getItem('ciudad'); 
-			$("#countryProfile").html(countryPerf);
+			//$("#countryProfile").html(countryPerf);
         }
 
         if(pass == "" || !contra.test(pass)){
@@ -12833,6 +12790,13 @@ $(document).ready(function() {
         ciudad = $(".pais").val(" ");
         pass = $(".clave").val(" "); 
     });  
+
+    var usuarioPerf = localStorage.getItem('username'); 
+    var nombrePerf = localStorage.getItem('nombre'); 
+    var countryPerf = localStorage.getItem('ciudad'); 
+    $("#nameProfile").html(nombrePerf);
+    $("#usernameProfile").html(usuarioPerf);
+    $("#countryProfile").html(countryPerf);
 
     /*Validacion de LOGIN*/
     $("#btn-login").click(function(){
@@ -12889,3 +12853,47 @@ $(document).ready(function() {
 });
 
 
+$(document).ready(function() {
+    
+        //Botones echos a la mala u . u (perdon)
+
+        $(".60031219").click(function(){
+            $(".fav-60031219").addClass('mostrar');
+        })
+        $(".425231").click(function(){
+            $(".fav-425231").addClass('mostrar');
+        })
+        $(".60025007").click(function(){
+            $(".fav-60025007").addClass('mostrar')
+        })
+        $(".20159719").click(function(){
+            $(".fav-20159719").addClass('mostrar')
+        })      
+        $(".492899").click(function(){
+            $(".fav-492899").addClass('mostrar')
+        })
+        $(".70039386").click(function(){
+            $(".fav-70039386").addClass('mostrar')
+        })
+        $(".70242546").click(function(){
+            $(".fav-70242546").addClass('mostrar')
+        })
+        $(".70206627").click(function(){
+            $(".fav-70206627").addClass('mostrar')
+        })
+        $(".60034580").click(function(){
+            $(".fav-60034580").addClass('mostrar')
+        })
+        $(".60031289").click(function(){
+            $(".fav-60031289").addClass('mostrar')
+        })
+        $(".70021646").click(function(){
+            $(".fav-70021646").addClass('mostrar')
+        })
+        $(".287348").click(function(){
+            $(".fav-287348").addClass('mostrar')
+        })
+        $(".70043941").click(function(){
+            $(".fav-70043941").addClass('mostrar')
+        })
+});
