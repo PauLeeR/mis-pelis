@@ -12650,6 +12650,7 @@ $(document).ready(function() {
 
 			$("#espacio-peliculas").append('<div class="contenedor-cada-pelicula row">'+
 					'<div class="col-xs-12">'+
+
 						'<h4 class="pull-left">'+traerPeliculas+'</h4><a class="btn-favorito pull-right ' + e.show_id + '" href="#">Add Favorite</a>'+ 
 					'</div>'+
 					'<div class="col-xs-12">'+
