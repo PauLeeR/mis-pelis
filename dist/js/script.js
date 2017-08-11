@@ -12638,17 +12638,32 @@ $(document).ready(function() {
 		data.forEach(function(e){
 			traerPeliculas = e.show_title;
 			year = e.release_year;
-			imagenPelicula = '<img src="'+ e.poster +'">';
+			imagenPelicula = '<img class="img-thumbnail" src="'+ e.poster +'">';
 			genero = e.category;
 			duracion = e.runtime;
 			director = e.director;
 			//console.log(traerPeliculas + year + imagenPelicula);
 
-			$("#espacio-peliculas").append('<div class="contenedor-cada-pelicula">'+
-				'<h4>'+traerPeliculas+'</h4><span>'+year+'</span><span class="categoria">'+genero+'</span>'+
-				imagenPelicula+
-				'<span class="red"><i class="fa fa-clock-o" aria-hidden="true"></i> '+duracion+' <i class="fa fa-television" aria-hidden="true"></i></span>'+
-				'</div>');
+			//pluggin que hace los rating de las estrellas
+			//$(".rateYo").rateYo({rating: e.rating, starWidth: "25px", ratedFill: "#E74C3C"});
+
+			$("#espacio-peliculas").append('<div class="contenedor-cada-pelicula row">'+
+					'<div class="col-xs-12">'+
+						'<h4 class="pull-left">'+traerPeliculas+'</h4><a class="btn-favorito pull-right" href="#">Add Favorite</a>'+ 
+					'</div>'+
+					'<div class="col-xs-12">'+
+						'<div class="col-xs-3 bg-imagen">'+imagenPelicula+'</div>'+ 
+						'<div class="col-xs-9 col10">'+
+							'<div class="col-xs-6">'+
+								'<span>'+year+' | </span><span>'+genero+'</span><br><span class="red">   <i class="fa fa-television" aria-hidden="true"></i> '+director+'</span><br>'+
+								'<i class="fa fa-clock-o" aria-hidden="true"></i> '+duracion+
+							'</div>'+
+							'<div class="col-xs-6 estrellitas">'+
+								'<div class="rateYo pull-right"></div>'+
+							'</div>'+
+						'</div>'+
+					'</div>'+
+				'</div>')
 			itemSelect.push(genero);
 		})
 
@@ -12663,7 +12678,7 @@ $(document).ready(function() {
     		$("#espacio-categorias").append("<option value='" + i + "'>" + uniqueNames[i] + "</option>");
     	}
 		
-		if($("#espacio-categorias").val() == 1){
+		if($("#espacio-categorias").val() == 1){ //Deberia que cuando el select vale 1 mostrar una categoria de peliculas pero no me muestra cuando cambia el valor
 		    	for(var i = 0; i < $(".categoria").length; i++ ){
 		    		if($(".categoria")[i].innerText == "Dramas"){
 		    			$("#espacio-peliculas").append($(".categoria").parent()[i])
@@ -12676,7 +12691,7 @@ $(document).ready(function() {
 
 	function llamadaAjax(){
 		$.ajax({
-		url: 'https://netflixroulette.net/api/api.php?actor=Liam%20Cunningham',
+		url: 'https://netflixroulette.net/api/api.php?actor=nicole%20kidman',
 		type: 'GET',
 		dataType: 'json',
 		})

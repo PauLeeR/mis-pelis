@@ -1,0 +1,38 @@
+//Estilos de movie.html
+.espacio-peliculas{
+	padding: 2%;
+	.contenedor-cada-pelicula{
+		cursor: pointer;
+		padding: 1% 0 3% 0;
+		border-bottom: 1px solid lightgray;
+		min-height: 153px;
+		.btn-favorito{
+			text-decoration: none;
+			padding: 7px 15px;
+			background-color: red;
+			color: #fff;
+			border-radius: 5px;
+		}
+		h3{
+			margin-top: 12px;
+		}
+		h3,
+		.btn-favorito{
+			display: inline-block;
+		}
+		&:hover{
+			background-color: lightgray;
+		}
+		.estrellitas,
+		.col10{
+			padding: 0;
+		}
+
+		.bg-imagen{
+			background-color: transparent;
+			height: 50px;
+			padding: 0;
+		}
+	}
+
+}
