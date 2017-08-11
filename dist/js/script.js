@@ -12631,9 +12631,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 $(document).ready(function() {
-	var itemSelect = [];
 	var traerPeliculas = function(data){
-		var tituliPelicula, year, imagenPelicula, genero, duracion, director;
+		var itemSelect = [];
+
+		var tituliPelicula, year, imagenPelicula, genero, duracion, director, id;
 		data.forEach(function(e){
 			traerPeliculas = e.show_title;
 			year = e.release_year;
@@ -12644,29 +12645,34 @@ $(document).ready(function() {
 			//console.log(traerPeliculas + year + imagenPelicula);
 
 			$("#espacio-peliculas").append('<div class="contenedor-cada-pelicula">'+
-				'<h4>'+traerPeliculas+'</h4><span>'+year+'</span><span>'+genero+'</span>'+
+				'<h4>'+traerPeliculas+'</h4><span>'+year+'</span><span class="categoria">'+genero+'</span>'+
 				imagenPelicula+
 				'<span class="red"><i class="fa fa-clock-o" aria-hidden="true"></i> '+duracion+' <i class="fa fa-television" aria-hidden="true"></i></span>'+
 				'</div>');
 			itemSelect.push(genero);
 		})
-		categoriasSelect (itemSelect)
-	}
 
-
-	function categoriasSelect (){
-		
-		//console.log(itemSelect);
+		//Imprimiendo categorias en select
 		var uniqueNames = [];
 		$.each(itemSelect, function(i, el){
 		    if($.inArray(el, uniqueNames) === -1) uniqueNames.push(el);
 		});
+		var contadorSelect = 0;
+    	//console.log(uniqueNames);
+    	for(var i = 0; i < uniqueNames.length; i++){
+    		$("#espacio-categorias").append("<option value='" + i + "'>" + uniqueNames[i] + "</option>");
+    	}
+		
+		if($("#espacio-categorias").val() == 1){
+		    	for(var i = 0; i < $(".categoria").length; i++ ){
+		    		if($(".categoria")[i].innerText == "Dramas"){
+		    			$("#espacio-peliculas").append($(".categoria").parent()[i])
+		    		
+		 }}
+		 }
 
-    	console.log(uniqueNames);
-		uniqueNames.forEach(function(el){
-			$("#espacio-categorias").append("<option>" + el + "</option>");
-		});
 	}
+
 
 	function llamadaAjax(){
 		$.ajax({
