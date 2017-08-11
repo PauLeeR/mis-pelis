@@ -4,13 +4,50 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Mis-Pelis</title>
-	<link href="https://fonts.googleapis.com/css?family=Anton|Nunito" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Anton|Cantarell|Nunito" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="dist/css/style.min.css">
 
-	<body> 
+	<body id="login">
+		<!--Parte Pau-->
+		<header role="banner" class="navbar navbar-fixed-top navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">	
+					<button data-toggle="collapse-side" data-target=".side-collapse" data-target-2=".side-collapse-container" type="button" class="navbar-toggle pull-left"><span class="icon-bar gray"></span><span class="icon-bar gray"></span><span class="icon-bar"></span></button>
+					<div class="navbar-brand navbar-brand-centered">LOGIN</div>		
+				</div>				
+				<div class="navbar-inverse side-collapse in">
+					<nav role="navigation" class="navbar-collapse">
+						<ul class="nav navbar-nav col-xs-12">
+							<li><a href="#index.html">HOME</a></li>
+							<li><a href="#createaccount.html">CREATE ACCOUNT</a></li>
+							<li><a href="#login.html">LOGIN</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>		
+		</header>
+		
+		<!--Parte Vanessa-->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 login">
 
+					<h1>LOGIN</h1>
+					<div class="log">
+						<label class="pull-left">Username</label>
+						<input type="text" placeholder="Enter your username" id="nombrelogin" class="nombre" required/>
+						<div id="mensajeUser" class="errores">Username no coincide</div>
 
-
+						<label class="text-left pull-left">Password</label><br>
+						<input type="password" placeholder="Enter only numbers" id="nicklogin" class="nick" required/>
+						<div id="mensajePass" class="errores">Password no coincide</div>			
+			
+						<a href="movies.html"><span class="btn" id="btn-login">Login</span></a>
+					</div>
+				
+				</div>
+			</div>
+		</div> 
 
 		<script src="https://use.fontawesome.com/4154d90246.js" ></script>
 		<script type="text/javascript" src="dist/js/script.js"></script>
