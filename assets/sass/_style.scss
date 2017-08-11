@@ -1,5 +1,5 @@
 #movies{
-	background-color: $color_background_principal;
+	background-image: url('../img/estrenos2.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100vh;		
@@ -144,4 +144,48 @@
 			font-weight: bold;
 		}
 	}
+}
+
+/**** header barra toggle Pau****/
+
+.navbar-fixed-top{
+  position: fixed;
+  z-index: 1;
+}
+.navbar-inverse .navbar-brand {
+    color: $white;
+    text-align: center;
+    float: none;
+    height: 65px;
+    padding: 25px;
+    font-family: $font1;
+}
+.navbar-inverse .navbar-nav>li>a{
+    width: 130%;
+    position: relative;
+    left: 5px;
+}
+.navbar-toggle{
+  	margin-top: 15px;
+}
+.side-collapse-container{
+ 	width:100%;
+ 	position:relative;
+ 	left:0;
+ 	transition:left .4s;
+}
+.side-collapse-container.out{
+  	left:200px;
+}
+.side-collapse {
+  top:66px;
+  bottom:0;
+  left:0;
+  width:180px;
+  position:fixed;
+  overflow:hidden;
+  transition:width .4s;
+}
+.side-collapse.in {
+  width:0;
 }
