@@ -12,11 +12,21 @@ $(document).ready(function() {
 			director = e.director;
 			//console.log(traerPeliculas + year + imagenPelicula);
 
-			$("#espacio-peliculas").append('<div class="contenedor-cada-pelicula">'+
-				'<h4>'+traerPeliculas+'</h4><span>'+year+'</span><span class="categoria">'+genero+'</span>'+
-				imagenPelicula+
-				'<span class="red"><i class="fa fa-clock-o" aria-hidden="true"></i> '+duracion+' <i class="fa fa-television" aria-hidden="true"></i></span>'+
-				'</div>');
+			$("#espacio-peliculas").append('<div class="contenedor-cada-pelicula row">'+
+					'<div class="col-xs-12">'+
+						'<h3>'+traerPeliculas+'</h3><a class="btn-favorito pull-right" href="#">Add Favorite</a>'+ 
+						'<div class="col-xs-2 bg-imagen">'+imagenPelicula+'</div>'+ 
+						'<div class="col-xs-10 col10">'+
+							'<div class="col-xs-6">'+
+								'<span>'+year+' | </span><span>'+genero+'</span><br><span class="red">   <i class="fa fa-television" aria-hidden="true"></i> '+director+'</span><br>'+
+								'<i class="fa fa-clock-o" aria-hidden="true"></i> '+duracion+
+							'</div>'+
+							'<div class="col-xs-6 estrellitas">'+
+								'<div class="rateYo pull-right"></div>'+
+							'</div>'+
+						'</div>'+
+					'</div>'+
+				'</div>')
 			itemSelect.push(genero);
 		})
 
