@@ -20,14 +20,4 @@ gulp.task('style', function(){
 	.pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('webserver', function(){
-	gulp.src('../mis-pelis/')
-	.pipe(webserver({
-		fallback: 'index.html',
-		livereload: true,
-		directoryListing: false,
-		open: true
-	}));
-});
-
-gulp.task('default', ['script', 'style', 'webserver']);
+gulp.task('default', ['script', 'style']);
