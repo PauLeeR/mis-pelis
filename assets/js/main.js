@@ -107,5 +107,16 @@ $(document).ready(function(){
         $(sel).toggleClass('in');
         $(sel2).toggleClass('out');
     });
+  
+  	$(".selLabel").click(function () {  //select de películas
+		$('.dropdown').toggleClass('active');
+	})
+
+	$(".dropdown-list li").click(function() { 
+		$('.selLabel').text($(this).text());
+		$('.dropdown').removeClass('active');
+		$('.selected-item p span').text($('.selLabel').text());
+	});
 
 })
+

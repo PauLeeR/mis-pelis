@@ -153,46 +153,227 @@
 	}
 }
 
-/**** header barra toggle Pau****/
 
-.navbar-fixed-top{
-  position: fixed;
-  z-index: 1;
-}
-.navbar-inverse .navbar-brand {
-    color: $white;
-    text-align: center;
-    float: none;
-    height: 65px;
-    padding: 25px;
-    font-family: $font1;
+/***** estilos pau lee ***/
+/**** header barra toggle, igual para casi todos los html ****/
+
+.navbar-inverse .navbar-brand{
+  color: $white;
+  text-align: center;
+  float: none;
+  height: 65px;
+  padding: 25px;
+  font-family: $font1;
+  margin-right: 40px;
 }
 .navbar-inverse .navbar-nav>li>a{
-    width: 130%;
-    position: relative;
-    left: 5px;
+  width: 130%;
+  position: relative;
+  left: 5px;
 }
 .navbar-toggle{
-  	margin-top: 15px;
+  margin-top: 15px;
 }
 .side-collapse-container{
- 	width:100%;
- 	position:relative;
- 	left:0;
- 	transition:left .4s;
+ width: $anchototal;
+ position: relative;
+ left: 0;
+ transition: left .4s;
 }
 .side-collapse-container.out{
-  	left:200px;
+  left: 200px;
 }
 .side-collapse {
-  top:66px;
-  bottom:0;
-  left:0;
-  width:180px;
-  position:fixed;
-  overflow:hidden;
-  transition:width .4s;
+  top: 66px;
+  bottom: 0;
+  left: 0;
+  width: 180px;
+  position: fixed;
+  overflow: hidden;
+  transition: width .4s;
 }
 .side-collapse.in {
-  width:0;
+  width: 0;
 }
+
+/****select movie categories****/
+.dropdown {
+  margin: 85px auto;
+  width: 320px;
+  position: relative;
+  -webkit-perspective: 800px;
+  perspective: 800px;
+}
+.dropdown.active .selLabel:after {
+  content: '\25B2';
+}
+.dropdown.active .dropdown-list li:nth-child(1) {
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+.dropdown.active .dropdown-list li:nth-child(2) {
+  -webkit-transform: translateY(200%);
+  transform: translateY(200%);
+}
+.dropdown.active .dropdown-list li:nth-child(3) {
+  -webkit-transform: translateY(300%);
+  transform: translateY(300%);
+}
+.dropdown.active .dropdown-list li:nth-child(4) {
+  -webkit-transform: translateY(400%);
+  transform: translateY(400%);
+}
+.dropdown > span {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  width: $anchototal;
+  height: 45px;
+  line-height: 45px;
+  color: $white;
+  font-size: 18px;
+  letter-spacing: 2px;
+  background: $rojontfx;
+  display: block;
+  padding: 0 50px 0 30px;
+  position: relative;
+  z-index: 9999;
+  cursor: pointer;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+  -webkit-backface-visibility: hidden;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.dropdown > span:after { //este es el caret del select
+  content: '\25BC';
+  position: absolute;
+  right: 0px;
+  top: 15%;
+  width: 50px;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  height: 70%;
+  line-height: 24px;
+}
+.dropdown > span:active {
+  -webkit-transform: rotateX(45deg);
+  transform: rotateX(45deg);
+}
+.dropdown > span:active:after {
+  content: '\25B2';
+}
+.dropdown-list {
+  position: absolute;
+  top: 0px;
+  width: $anchototal;
+}
+.dropdown-list li { //lista donde irán las películas
+  display: block;
+  background-color: $movies;
+  list-style: none;
+  left: 0;
+  opacity: 1;
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+  position: absolute;
+  top: 0;
+  width: $anchototal;
+}
+.dropdown-list li:nth-child(1) {
+  z-index: 4;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.dropdown-list li:nth-child(2) {
+  z-index: 3;
+  -webkit-transform: translateY(3%);
+  transform: translateY(3%);
+}
+.dropdown-list li:nth-child(3) {
+  z-index: 2;
+  -webkit-transform: translateY(6%);
+  transform: translateY(6%);
+}
+.dropdown-list li:nth-child(4) {
+  z-index: 1;
+  -webkit-transform: translateY(9%);
+  transform: translateY(9%);
+}
+.dropdown-list li span {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  -webkit-backface-visibility: hidden;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: $anchototal;
+  font-size: 16px;
+  line-height: 45px;
+  padding: 0 7px;
+  display: block;
+  color: $white;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+.movie-pic{
+  width: 100%;
+  height: 50%;
+  padding-top: 320px;
+  background-color: gray; 
+}
+.movie-watch{
+  width: 100%;
+  height: 50px;
+  background-color: $rojontfx;
+  display: inline-block;
+
+  h5{
+    font-size: 16px;
+    color: $white;
+    font-weight: $bold;
+  }
+
+  .fa-angle-right{
+    font-size: 18px;
+    font-weight: $bold;
+    margin-left: 20px;
+  }
+}
+
+#profile{
+  padding-top: 100px;
+  padding-bottom: 150px;
+  width: 100%;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+  .data{
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-bottom: 30px;
+    padding: 20px;
+    line-height: 10px;
+    p{
+      font-weight: $bold;
+    }
+    h5{
+      font-size: 14px;
+      color: $white;
+      font-weight: $bold;
+    }
+  }
+}
+/***** fin estilos pau lee ***/
