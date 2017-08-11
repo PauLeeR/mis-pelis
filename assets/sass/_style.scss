@@ -1,3 +1,39 @@
+//Estilos de movie.html
+.espacio-peliculas{
+	padding: 2%;
+	.contenedor-cada-pelicula{
+		cursor: pointer;
+		padding: 1% 0 3% 0;
+		border-bottom: 1px solid lightgray;
+		min-height: 153px;
+		.btn-favorito{
+			text-decoration: none;
+			padding: 7px 15px;
+			background-color: red;
+			color: #fff;
+			border-radius: 5px;
+		}
+		h3{
+			margin-top: 12px;
+		}
+		h3,
+		.btn-favorito{
+			display: inline-block;
+			margin-top: 10px;
+		}
+		&:hover{
+			background-color: lightgray;
+		}
+		.estrellitas,
+		.col10{
+			padding: 0;
+		}
+
+		.bg-imagen{
+			background-color: transparent;
+			height: 50px;
+			padding: 0;
+
 #movies{
 	background-image: url('../img/estrenos2.jpg');
 	background-repeat: no-repeat;
@@ -153,6 +189,38 @@
 	}
 }
 
+//Estilos fav
+#espacio-fav{
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+}
+.item-fav{
+	background: white;
+	width: 25%;
+	margin: 0 5px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 5px;
+  display: none;
+
+  .text-fav{
+  	padding: 5px;
+  	p{
+  		text-align: left;
+  		margin-bottom: 0;
+  	}
+  	i{	
+  		font-size: 18px;
+  	}
+  }
+}
+
+.mostrar{
+	display: inline-block;
+}
 
 /***** estilos pau lee ***/
 /**** header barra toggle, igual para casi todos los html ****/
