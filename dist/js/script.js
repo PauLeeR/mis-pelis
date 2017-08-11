@@ -12631,6 +12631,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 $(document).ready(function() {
+    $('.modalito').hide();
 	var traerPeliculas = function(data){
 		var itemSelect = [];
 
@@ -12647,24 +12648,46 @@ $(document).ready(function() {
 			//pluggin que hace los rating de las estrellas
 			//$(".rateYo").rateYo({rating: e.rating, starWidth: "25px", ratedFill: "#E74C3C"});
 
-			$("#espacio-peliculas").append('<div class="contenedor-cada-pelicula row">'+
-					'<div class="col-xs-12">'+
+		$("#espacio-peliculas").append('<div class="contenedor-cada-pelicula row" id="'+e.show_id+'">'+
+                    '<div class="col-xs-12">'+
+                        '<h3>'+traerPeliculas+'</h3><a class="btn-favorito pull-right" href="#">Add Favorite</a>'+ 
+                        '<div class="col-xs-2 bg-imagen">'+imagenPelicula+'</div>'+ 
+                        '<div class="col-xs-10 col10">'+
+                            '<div class="col-xs-6">'+
+                                '<span>'+year+' | </span><span>'+genero+'</span><br><span class="red">   <i class="fa fa-television" aria-hidden="true"></i> '+director+'</span><br>'+
+                                '<i class="fa fa-clock-o" aria-hidden="true"></i> '+duracion+
+                            '</div>'+
+                            '<div class="col-xs-6 estrellitas">'+
+                                '<div class="rateYo pull-right"></div>'+
+                            '</div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>');
+        $("#"+e.show_id).click(function() {
+            $('.modalito').show();
+            $('.modalito').empty();
+            $("#espacio-peliculas").append('<div class="modalito">'+
+                '<div class="nav-negro"><i class="fa fa-chevron-left cerrar" aria-hidden="true"></i><h3>DETAILS<h3></div>'+
+                '<div id="details">'+
+                '<div class="row">'+
+                '<div class="col-xs-12 movie-pic text-center">'+
+                '<img src="'+e.poster+'" alt="">'+
+                '</div> '+
+                '</div>'+
+                '<div class="col-xs-12 movie-watch">'+
+                '<h5 class="watch-barra">Watch <i class="fa fa-angle-right" aria-hidden="true"></i></h5>'+
+                '</div>'+
+                '</div>'+
+                '<div class="contenido-pelis">'+
+                '<h3>'+traerPeliculas+'</h3>'+
+                '<p>'+e.summary+'</p>'+
+                '</div>'+
+                '</div>');
 
-						'<h4 class="pull-left">'+traerPeliculas+'</h4><a class="btn-favorito pull-right ' + e.show_id + '" href="#">Add Favorite</a>'+ 
-					'</div>'+
-					'<div class="col-xs-12">'+
-						'<div class="col-xs-3 bg-imagen">'+imagenPelicula+'</div>'+ 
-						'<div class="col-xs-9 col10">'+
-							'<div class="col-xs-6">'+
-								'<span>'+year+' | </span><span>'+genero+'</span><br><span class="red">   <i class="fa fa-television" aria-hidden="true"></i> '+director+'</span><br>'+
-								'<i class="fa fa-clock-o" aria-hidden="true"></i> '+duracion+
-							'</div>'+
-							'<div class="col-xs-6 estrellitas">'+
-								'<div class="rateYo pull-right"></div>'+
-							'</div>'+
-						'</div>'+
-					'</div>'+
-				'</div>');
+            $('.cerrar').click(function(){
+                $('.modalito').hide();
+            })
+        });
 
 			//Fav
 			$("#espacio-fav").prepend('<div class="item-fav fav-' + e.show_id + '"><img src="' + e.poster + '" class="img-responsive"><div class="text-fav"><p>'+e.show_title+'</p><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div></div>');
