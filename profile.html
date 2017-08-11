@@ -8,12 +8,50 @@
 	<link rel="stylesheet" type="text/css" href="dist/css/style.min.css">
 
 	<body> 
+		<header role="banner" class="navbar navbar-fixed-top navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">	
+					<button data-toggle="collapse-side" data-target=".side-collapse" data-target-2=".side-collapse-container" type="button" class="navbar-toggle pull-left"><span class="icon-bar gray"></span><span class="icon-bar gray"></span><span class="icon-bar"></span></button>
+					<div class="navbar-brand navbar-brand-centered">PROFILE</div>		
+				</div>				
+				<div class="navbar-inverse side-collapse in">
+					<nav role="navigation" class="navbar-collapse">
+						<ul class="nav navbar-nav col-xs-12">
+							<li><a href="#createaccount.html">CREATE ACCOUNT</a></li>
+							<li><a href="login.html">LOG IN</a></li>
+							<li><a href="movies.html">MOVIES</a></li>
+							<li><a href="details.html">DETAILS</a></li>
+							<li><a href="actor.html">ACTOR</a></li>
+							<li><a href="profile.html">PROFILE</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section id="profile">
+		<div class="row text-center">
+			<div class="col-xs-12 user-pic">
+				<img src="dist/img/movie-icon.png" class="8mm center-block img-responsive img-circle" alt="movie icon">
+				<!--MOVIE COVER-->
+			</div>	
+		</div>
+		<div class="row text-center data">
+			<p>Username: <span id="usernameProfile"></span></p>
+			<p>Name: <span id="nameProfile"></span></p>
+			<p>Country: <span id="countryProfile"></span></p>
+			
+		</div>
+		<div class="col-xs-12 movie-watch">
+			<h5>My Favorites</h5>		
+		</div>
+	</section>
 
 
 
 
-		<script src="https://use.fontawesome.com/4154d90246.js" ></script>
-		<script type="text/javascript" src="dist/js/script.js"></script>
+	<script src="https://use.fontawesome.com/4154d90246.js" ></script>
+	<script type="text/javascript" src="dist/js/script.js"></script>
 
-	</body>
-	</html>
+</body>
+</html>
