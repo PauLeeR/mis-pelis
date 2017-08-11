@@ -28,11 +28,21 @@
 		.col10{
 			padding: 0;
 		}
-
 		.bg-imagen{
 			background-color: transparent;
 			height: 50px;
 			padding: 0;
+    }
+  }
+}
+#espacio-categorias {
+  margin: 85px 30px 10px 30px;
+  padding: 5px 10px;
+  width: 300px;
+  position: relative;
+  -webkit-perspective: 800px;
+  border: 2px solid $color_background_principal2;
+}
 
 #movies{
 	background-image: url('../img/estrenos2.jpg');
@@ -224,7 +234,6 @@
 
 /***** estilos pau lee ***/
 /**** header barra toggle, igual para casi todos los html ****/
-
 .navbar-inverse .navbar-brand{
   color: $white;
   text-align: center;
@@ -242,6 +251,15 @@
 .navbar-toggle{
   margin-top: 15px;
 }
+.navbar-inverse .navbar-toggle{
+  border-color: transparent;
+  padding: 10px 15px;
+}
+
+.navbar-inverse .navbar-toggle:hover {
+  background-color: transparent;
+}
+
 .side-collapse-container{
  width: $anchototal;
  position: relative;
@@ -265,136 +283,6 @@
 }
 
 /****select movie categories****/
-.dropdown {
-  margin: 85px auto;
-  width: 320px;
-  position: relative;
-  -webkit-perspective: 800px;
-  perspective: 800px;
-}
-.dropdown.active .selLabel:after {
-  content: '\25B2';
-}
-.dropdown.active .dropdown-list li:nth-child(1) {
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-}
-.dropdown.active .dropdown-list li:nth-child(2) {
-  -webkit-transform: translateY(200%);
-  transform: translateY(200%);
-}
-.dropdown.active .dropdown-list li:nth-child(3) {
-  -webkit-transform: translateY(300%);
-  transform: translateY(300%);
-}
-.dropdown.active .dropdown-list li:nth-child(4) {
-  -webkit-transform: translateY(400%);
-  transform: translateY(400%);
-}
-.dropdown > span {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  width: $anchototal;
-  height: 45px;
-  line-height: 45px;
-  color: $white;
-  font-size: 18px;
-  letter-spacing: 2px;
-  background: $rojontfx;
-  display: block;
-  padding: 0 50px 0 30px;
-  position: relative;
-  z-index: 9999;
-  cursor: pointer;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-transform-origin: 50% 0%;
-  transform-origin: 50% 0%;
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
-  transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
-  -webkit-backface-visibility: hidden;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.dropdown > span:after { //este es el caret del select
-  content: '\25BC';
-  position: absolute;
-  right: 0px;
-  top: 15%;
-  width: 50px;
-  text-align: center;
-  font-size: 16px;
-  padding: 10px;
-  height: 70%;
-  line-height: 24px;
-}
-.dropdown > span:active {
-  -webkit-transform: rotateX(45deg);
-  transform: rotateX(45deg);
-}
-.dropdown > span:active:after {
-  content: '\25B2';
-}
-.dropdown-list {
-  position: absolute;
-  top: 0px;
-  width: $anchototal;
-}
-.dropdown-list li { //lista donde irán las películas
-  display: block;
-  background-color: $movies;
-  list-style: none;
-  left: 0;
-  opacity: 1;
-  -webkit-transition: -webkit-transform 300ms ease;
-  transition: -webkit-transform 300ms ease;
-  transition: transform 300ms ease;
-  transition: transform 300ms ease, -webkit-transform 300ms ease;
-  position: absolute;
-  top: 0;
-  width: $anchototal;
-}
-.dropdown-list li:nth-child(1) {
-  z-index: 4;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-.dropdown-list li:nth-child(2) {
-  z-index: 3;
-  -webkit-transform: translateY(3%);
-  transform: translateY(3%);
-}
-.dropdown-list li:nth-child(3) {
-  z-index: 2;
-  -webkit-transform: translateY(6%);
-  transform: translateY(6%);
-}
-.dropdown-list li:nth-child(4) {
-  z-index: 1;
-  -webkit-transform: translateY(9%);
-  transform: translateY(9%);
-}
-.dropdown-list li span {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  -webkit-backface-visibility: hidden;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: $anchototal;
-  font-size: 16px;
-  line-height: 45px;
-  padding: 0 7px;
-  display: block;
-  color: $white;
-  cursor: pointer;
-  letter-spacing: 2px;
-}
 .movie-pic{
   width: 100%;
   height: 50%;
@@ -444,4 +332,3 @@
     }
   }
 }
-/***** fin estilos pau lee ***/

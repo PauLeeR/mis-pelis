@@ -12672,8 +12672,6 @@ $(document).ready(function() {
 
 		})
 
-
-	
 		//Imprimiendo categorias en select
 		var uniqueNames = [];
 		$.each(itemSelect, function(i, el){
@@ -12747,10 +12745,6 @@ $(document).ready(function() {
 	}llamadaAjax()
 	
 
-});
-=======
-$(document).ready(function(){ 
-
 	/*validación de formulario*/
 	var correo = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
 	var contra = /^[0-9]+(\.[0-9])?$/;
@@ -12769,6 +12763,8 @@ $(document).ready(function(){
         }else{
             $("#mensaje").fadeOut();
             localStorage.setItem('nombre', nombre);
+            var nombrePerf = localStorage.getItem('nombre'); 
+			$("#nameProfile").html(nombrePerf);
         }
 
         if(nick == ""){
@@ -12777,7 +12773,9 @@ $(document).ready(function(){
         }else{
             $("#mensaje2").fadeOut();
             localStorage.setItem('username', nick);
-        }
+            var usuarioPerf = localStorage.getItem('username'); 
+			$("#usernameProfile").html(usuarioPerf);
+	     }
 
         if(email == "" || !correo.test(email)){
             $("#mensaje3").fadeIn("slow");
@@ -12793,6 +12791,8 @@ $(document).ready(function(){
         }else{
             $("#mensaje4").fadeOut();
             localStorage.setItem('ciudad', ciudad);
+            var countryPerf = localStorage.getItem('ciudad'); 
+			$("#countryProfile").html(countryPerf);
         }
 
         if(pass == "" || !contra.test(pass)){
@@ -12853,7 +12853,7 @@ $(document).ready(function(){
         $(sel2).toggleClass('out');
     });
   
-    $(".selLabel").click(function () {  //select de películas
+  	$(".selLabel").click(function () {  //select de películas
 		$('.dropdown').toggleClass('active');
 	})
 
@@ -12862,5 +12862,7 @@ $(document).ready(function(){
 		$('.dropdown').removeClass('active');
 		$('.selected-item p span').text($('.selLabel').text());
 	});
-})
+
+});
+
 
