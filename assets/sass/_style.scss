@@ -19,6 +19,7 @@
 		h3,
 		.btn-favorito{
 			display: inline-block;
+			margin-top: 10px;
 		}
 		&:hover{
 			background-color: lightgray;
@@ -34,5 +35,4 @@
 			padding: 0;
 		}
 	}
-
 }
