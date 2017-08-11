@@ -13,7 +13,7 @@
 			<div class="container">
 				<div class="navbar-header">	
 					<button data-toggle="collapse-side" data-target=".side-collapse" data-target-2=".side-collapse-container" type="button" class="navbar-toggle pull-left"><span class="icon-bar gray"></span><span class="icon-bar gray"></span><span class="icon-bar"></span></button>
-					<div class="navbar-brand navbar-brand-centered">CREATE ACCOUNT</div>		
+					<div class="navbar-brand navbar-brand-centered">LOGIN</div>		
 				</div>				
 				<div class="navbar-inverse side-collapse in">
 					<nav role="navigation" class="navbar-collapse">
@@ -32,16 +32,17 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 login">
 
-					<h1>lOGIN</h1>
+					<h1>LOGIN</h1>
 					<div class="log">
-						<p>Nickname</p>
-						<input type="text" placeholder="Your Name and Last name" id="nombre" class="nombre" required/>
-						<div id="mensaje" class="errores">Nombre no coincide</div>
-						<p>password</p>
-						<input type="text" placeholder="Your username" id="nick" class="nick" required/>
-						<div id="mensaje" class="errores">Password no coincide</div>			
+						<label class="pull-left">Username</label>
+						<input type="text" placeholder="Enter your username" id="nombrelogin" class="nombre" required/>
+						<div id="mensajeUser" class="errores">Username no coincide</div>
+
+						<label class="text-left pull-left">Password</label><br>
+						<input type="password" placeholder="Enter only numbers" id="nicklogin" class="nick" required/>
+						<div id="mensajePass" class="errores">Password no coincide</div>			
 			
-						<a href="movies.html"><span class="btn">Create</span></a>
+						<a href="movies.html"><span class="btn" id="btn-login">Login</span></a>
 					</div>
 				
 				</div>

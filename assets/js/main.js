@@ -3,7 +3,7 @@ $(document).ready(function(){
 	/*validación de formulario*/
 	var correo = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
 	var contra = /^[0-9]+(\.[0-9])?$/;
-    /*var minus =   /^[a-z]+$/;*/ arroja problemas usando esta variable.
+    /*var minus =   /^[a-z]+$/;*/
 
 	$(".btn-2").click(function(){
         var nombre = $(".nombre").val();        
@@ -17,6 +17,7 @@ $(document).ready(function(){
                 return false;
         }else{
             $("#mensaje").fadeOut();
+            localStorage.setItem('nombre', nombre);
         }
 
         if(nick == ""){
@@ -24,6 +25,7 @@ $(document).ready(function(){
                 return false;
         }else{
             $("#mensaje2").fadeOut();
+            localStorage.setItem('username', nick);
         }
 
         if(email == "" || !correo.test(email)){
@@ -31,6 +33,7 @@ $(document).ready(function(){
                 return false;
         }else{
             $("#mensaje3").fadeOut();
+            localStorage.setItem('correo', email);
         }
 
         if(ciudad == ""){
@@ -38,6 +41,7 @@ $(document).ready(function(){
                 return false;
         }else{
             $("#mensaje4").fadeOut();
+            localStorage.setItem('ciudad', ciudad);
         }
 
         if(pass == "" || !contra.test(pass)){
@@ -45,15 +49,49 @@ $(document).ready(function(){
                 return false;
         }else{
             $("#mensaje5").fadeOut();
+            localStorage.setItem('password', pass);
         } 
-        return true;   
+        return true; 
 
         nombre = $(".nombre").val(" ");        
         nick = $(".nick").val(" ");
         email = $(".correo").val(" ");
         ciudad = $(".pais").val(" ");
-        pass = $(".clave").val(" ");  
+        pass = $(".clave").val(" "); 
     });  
+
+    /*Validacion de LOGIN*/
+    $("#btn-login").click(function(){
+    	var verificacionUsername = localStorage.getItem('username');
+    	var verificacionPass =  localStorage.getItem('password');
+    	var userLogin = $("#nombrelogin").val();
+    	var passLogin = $("#nicklogin").val();
+
+    	if(verUsuario()){
+    		if(verPass()){
+    			window.open('movies.html','_self',false);  
+    		}
+    	}
+
+    	function verUsuario(){
+    		if(verificacionUsername != userLogin){
+	    		$("#mensajeUser").append('<p class="red">Usuario Invalido</p>');
+	    		return false;
+	    	} else{
+	    		return true;
+	    	}
+    	}
+
+    	function verPass(){
+    		if(verificacionPass != passLogin){
+    			$("#mensajePass").append('<p class="red">Contraseña Invalida</p>');
+    			return false;
+    		} else{
+    			return true;
+    		}
+    	}
+    	
+    });
 
     /*navbar de pau*/  
     var sideslider = $('[data-toggle=collapse-side]');
