@@ -18,6 +18,8 @@ $(document).ready(function(){
         }else{
             $("#mensaje").fadeOut();
             localStorage.setItem('nombre', nombre);
+            var nombrePerf = localStorage.getItem('nombre'); 
+			$("#nameProfile").html(nombrePerf);
         }
 
         if(nick == ""){
@@ -26,7 +28,9 @@ $(document).ready(function(){
         }else{
             $("#mensaje2").fadeOut();
             localStorage.setItem('username', nick);
-        }
+            var usuarioPerf = localStorage.getItem('username'); 
+			$("#usernameProfile").html(usuarioPerf);
+	     }
 
         if(email == "" || !correo.test(email)){
             $("#mensaje3").fadeIn("slow");
@@ -42,6 +46,8 @@ $(document).ready(function(){
         }else{
             $("#mensaje4").fadeOut();
             localStorage.setItem('ciudad', ciudad);
+            var countryPerf = localStorage.getItem('ciudad'); 
+			$("#countryProfile").html(countryPerf);
         }
 
         if(pass == "" || !contra.test(pass)){
